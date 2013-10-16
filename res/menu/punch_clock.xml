@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+	<item android:id="@+id/buttonManualAdd"
+          android:icon="@android:drawable/ic_menu_add"
+          android:title="@string/buttonManualAdd"
+          android:showAsAction="ifRoom"/>
+	
+	<item android:id="@+id/buttonListView"
+          android:icon="@android:drawable/ic_menu_sort_by_size"
+          android:title="@string/buttonListView"
+          android:showAsAction="ifRoom"/>
+	
+	<item android:id="@+id/buttonDayView"
+          android:icon="@android:drawable/ic_menu_today"
+          android:title="@string/buttonDayView"
+          android:showAsAction="ifRoom"/>
+	
+	<item android:id="@+id/buttonPeriodView"
+          android:icon="@android:drawable/ic_menu_week"
+          android:title="@string/buttonPeriodView"
+          android:showAsAction="ifRoom"/>
+	
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+
+</menu>

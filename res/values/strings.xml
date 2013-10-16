@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Time Card</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_current_time">Current Time</string>
+    <string name="button_in_out">IN</string>
+    <string name="button_change_activity">Switch Activity</string>
+    <string name="title_times">Time Worked</string>
+    <string name="text_today">Today</string>
+    <string name="text_this_week">This Week</string>
+    <string name="text_this_period">This Pay Period</string>
+    <string name="title_activity">Current Activity</string>
+    <string name="time_today">00:00</string>
+    <string name="time_week">00:00</string>
+    <string name="time_period">00:00</string>
+    <string name="clock_colon">:</string>
+    <string name="titleEntries">Entries</string>
+    <string name="buttonManualAdd">Add</string>
+    <string name="buttonListView">List View</string>
+    <string name="buttonDayView">Day View</string>
+    <string name="buttonPeriodView">Pay Period View</string>
+    <string name="titleTimeCardEntries">Time Card Entries</string>
+
+</resources>

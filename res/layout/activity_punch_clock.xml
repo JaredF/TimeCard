@@ -1,0 +1,267 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".PunchClock" >
+
+	<TextView
+		android:id="@+id/textTitleCurrentTime"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="left"
+		style="@style/Titles"
+		android:text="@string/title_current_time"
+		android:textAppearance="?android:attr/textAppearanceLarge" />
+     
+	<View
+		android:id="@+id/viewLineCurrentTimeBottom"
+		android:layout_width="match_parent"
+		android:layout_height="2dip"
+		android:background="@color/dividers" />
+	    
+	<LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:orientation="horizontal" >
+	    
+	    <TextClock
+		    android:id="@+id/textClockHours"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:format12Hour="H"
+		    android:format24Hour="H"
+		    style="@style/MainClock" />
+		    
+		<TextView
+		    android:id="@+id/textClockColon"
+		    style="@style/MainClock"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center"
+		    android:text="@string/clock_colon" />
+		
+		<TextClock
+		    android:id="@+id/textClockMinutes"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:format12Hour="mm"
+		    android:format24Hour="mm"
+		    style="@style/MainClock" />
+		
+		<TextClock
+		    android:id="@+id/textClockSeconds"
+		    style="@style/ClockSeconds"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:format12Hour="ss"
+		    android:format24Hour="ss"
+		    android:paddingRight="3dp" />
+		    
+	</LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:orientation="horizontal"
+	    android:paddingBottom="10dp" >
+	    
+		<Button
+		    android:id="@+id/buttonInOut"
+		    android:layout_width="175dp"
+		    android:layout_height="75dp"
+		    android:gravity="center"
+		    android:paddingBottom="10dp"
+		    android:textAppearance="@style/buttonText"
+		    android:text="@string/button_in_out"
+		    tools:ignore="ButtonStyle" />
+	
+		<Button
+		    android:id="@+id/buttonChangeActivity"
+		    android:layout_width="175dp"
+		    android:layout_height="75dp"
+		    android:gravity="center"
+		    android:paddingBottom="10dp"
+		    android:text="@string/button_change_activity"
+		    android:textAppearance="@style/buttonText"
+		    tools:ignore="ButtonStyle" />
+	
+	</LinearLayout>
+	
+	<TableLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" >
+
+		<TableRow
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_span="3"
+		        android:layout_weight="1"
+		        android:orientation="vertical" >
+
+		        <View
+		            android:id="@+id/viewLineTimesTop"
+		            android:layout_width="match_parent"
+		            android:layout_height="2dip"
+		            android:background="@color/dividers" />
+
+		        <TextView
+		            android:id="@+id/textTitleTimes"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_gravity="left"
+		            style="@style/Titles"
+		            android:text="@string/title_times"
+		            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		        <View
+		            android:id="@+id/viewLineTimesBottom"
+		            android:layout_width="match_parent"
+		            android:layout_height="2dip"
+		            android:background="@color/dividers" />
+		    </LinearLayout>
+
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_column="5"
+		        android:layout_weight="3"
+		        android:orientation="vertical" >
+
+		        <View
+		            android:id="@+id/viewLineProjectTop"
+		            android:layout_width="match_parent"
+		            android:layout_height="2dip"
+		            android:background="@color/dividers" />
+
+		        <TextView
+		            android:id="@+id/textTitleActivity"
+		            style="@style/Titles"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/title_activity"
+		            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		        <View
+		            android:id="@+id/viewLineProjectBottom"
+		            android:layout_width="match_parent"
+		            android:layout_height="2dip"
+		            android:background="@color/dividers" />
+		    </LinearLayout>
+		</TableRow>
+		
+		<TableRow
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" >
+	
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_column="1"
+				android:layout_weight="1"
+				android:paddingLeft="15dp" >
+			
+				<TextView
+					android:id="@+id/textViewTimeToday"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="left"
+					android:text="@string/time_today"
+					android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+				<TextView
+					android:id="@+id/textViewTimeTextToday"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="left"
+					android:text="@string/text_today"
+					android:textAppearance="?android:attr/textAppearanceMedium" />
+			
+			</LinearLayout>
+			
+			<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_column="2"
+			android:layout_weight="1"
+			android:paddingLeft="15dp" >
+				
+				<TextView
+					android:id="@+id/textViewTimeThisWeek"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="left"
+					android:text="@string/time_week"
+					android:textAppearance="?android:attr/textAppearanceLarge" />
+				
+				<TextView
+					android:id="@+id/textViewTimeTextThisWeek"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="left"
+					android:text="@string/text_this_week"
+					android:textAppearance="?android:attr/textAppearanceMedium" />
+			
+			</LinearLayout>
+		
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_column="3"
+				android:layout_weight="1"
+				android:paddingLeft="15dp" >
+			
+				<TextView
+					android:id="@+id/textViewTimeThisPeriod"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="left"
+					android:text="@string/time_period"
+					android:textAppearance="?android:attr/textAppearanceLarge" />
+				
+				<TextView
+					android:id="@+id/textViewTimeTextThisPeriod"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="left"
+					android:text="@string/text_this_period"
+					android:textAppearance="?android:attr/textAppearanceMedium" />
+			
+			</LinearLayout>
+		
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_column="5"
+				android:layout_weight="1"
+				android:paddingLeft="15dp" >
+			
+				<TextView
+				    android:id="@+id/textViewCurrentProject"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_gravity="left"
+				    android:paddingTop="10dp"
+				    android:textAppearance="?android:attr/textAppearanceLarge" />
+			
+			</LinearLayout>
+		
+		</TableRow>
+	
+	</TableLayout>
+	
+</LinearLayout>
