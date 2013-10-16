@@ -13,15 +13,60 @@
 		    android:textAppearance="?android:attr/textAppearanceLarge" />
 	    
 			<View
-			android:id="@+id/viewLineEntriesBottom"
-			android:layout_width="match_parent"
-			android:layout_height="2dip"
-			android:background="@color/dividers" />
+				android:id="@+id/viewLineEntriesBottom"
+				android:layout_width="match_parent"
+				android:layout_height="2dip"
+				android:background="@color/dividers" />
 
-			<ListView
-			    android:id="@+id/listEntries"
+			<TableLayout
 			    android:layout_width="match_parent"
 			    android:layout_height="wrap_content" >
-			</ListView>
+			    
+			    <TableRow>
+			        
+			        <TextView
+				        android:id="@+id/titleTimeIn"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content"
+				        android:text="@string/titleTimeIn"
+				        android:textAppearance="?android:attr/textAppearanceMedium" />
+				    
+				    <TextView
+				        android:id="@+id/titleTimeOut"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:text="@string/titleTimeOut"
+				        android:textAppearance="?android:attr/textAppearanceMedium" />
+				
+				    <TextView
+				       android:id="@+id/titleProject"
+				       android:layout_width="wrap_content"
+				       android:layout_height="wrap_content"
+				       android:text="@string/titleActivity"
+				       android:textAppearance="?android:attr/textAppearanceMedium" />
+				    
+				    <TextView
+				       android:id="@+id/titleHours"
+				       android:layout_width="wrap_content"
+				       android:layout_height="wrap_content"
+				       android:text="@string/titleHours"
+				       android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+			    </TableRow>
+			    
+			    <TableRow>
+			        
+			        <ListView
+					    android:id="@+id/listEntries"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content" >
+					</ListView>
+			        
+			    </TableRow>
+			    
+			    
+			    
+			    </TableLayout>
+			
     
 </LinearLayout>
