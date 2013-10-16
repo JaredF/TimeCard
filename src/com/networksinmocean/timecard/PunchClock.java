@@ -2,8 +2,10 @@ package com.networksinmocean.timecard;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
@@ -77,12 +79,32 @@ public class PunchClock extends Activity {
 		}
     	
     };
+    
+    public void showActivityEntries(){
+    	
+    	Intent showActivityEntries = new Intent(getApplication(), Entries.class);
+    	
+    	startActivity(showActivityEntries);
+    	
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.punch_clock, menu);
         return true;
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.buttonListView:
+                showActivityEntries();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
     
 }
