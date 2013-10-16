@@ -13,24 +13,28 @@
         android:id="@+id/timeIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
        android:id="@+id/timeOut"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
+       android:layout_weight="1"
        android:textAppearance="?android:attr/textAppearanceMedium" />
     
     <TextView
        android:id="@+id/project"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
+       android:layout_weight="1"
        android:textAppearance="?android:attr/textAppearanceMedium" />
     
     <TextView
        android:id="@+id/hours"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
+       android:layout_weight="1"
        android:textAppearance="?android:attr/textAppearanceMedium" />
     
 </TableRow>
