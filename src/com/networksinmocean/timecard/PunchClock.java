@@ -87,6 +87,14 @@ public class PunchClock extends Activity {
     	startActivity(showActivityEntries);
     	
     }
+    
+    public void showActivityAdd(){
+    	
+    	Intent showActivityAdd = new Intent(getApplication(), Add.class);
+    	
+    	startActivity(showActivityAdd);
+    	
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -101,6 +109,9 @@ public class PunchClock extends Activity {
         switch (item.getItemId()) {
             case R.id.buttonListView:
                 showActivityEntries();
+                return true;
+            case R.id.buttonManualAdd:
+                showActivityAdd();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -3,6 +3,7 @@ package com.networksinmocean.timecard;
 import java.util.ArrayList;
 import java.util.HashMap;
 import android.view.View;
+import android.view.WindowManager;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,6 +25,11 @@ public class Entries extends ListActivity{
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_entries);
+		
+		// This hides the top status bar since it is not necessary if the app is running.
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+        		WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        
 		ArrayList<HashMap<String, String>> punchList = dbTools.getPunches();
 		
 		if(punchList.size() != 0){
