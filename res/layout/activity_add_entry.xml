@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|left"
+            android:layout_span="2"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </TableRow>
+    
+	<View
+		android:id="@+id/viewLineTimeInTop"
+		android:layout_width="match_parent"
+		android:layout_height="2dip"
+		android:background="@color/dividers" />
+	
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/titleTimeIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center"
+            android:layout_span="2"
+            android:text="@string/editAddIn"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+	
+    <View
+        android:id="@+id/viewLineTimeInBottom"
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:background="@color/dividers" />
+    
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp" >
+
+        <EditText
+            android:id="@+id/editTextDateIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/editTextTimeIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:inputType="time" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp" >
+
+        <TextView
+            android:id="@+id/inTextDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/textDate"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/inTextTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/textTime"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </TableRow>
+	
+    <View
+        android:id="@+id/viewLineTimeOutTop"
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:background="@color/dividers" />
+    
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/titleTimeOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_span="2"
+            android:text="@string/titleTimeOut"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+	
+    <View
+        android:id="@+id/viewLineTimeOutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:background="@color/dividers" />
+    
+    <TableRow
+        android:id="@+id/tableRow6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp" >
+
+        <EditText
+            android:id="@+id/editTextDateOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/editTextTimeOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:inputType="time" />
+        
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp" >
+
+        <TextView
+            android:id="@+id/outTextDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:text="@string/textDate"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/outTextTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:text="@string/textTime"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </TableRow>
+	
+    <View
+        android:id="@+id/viewLineActivityTop"
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:background="@color/dividers" />
+    
+    <TableRow
+        android:id="@+id/tableRow8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/titleActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_span="2"
+            android:text="@string/titleActivity"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+
+    <View
+        android:id="@+id/viewLineActivityBottom"
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:background="@color/dividers" />
+    
+    <TableRow
+        android:id="@+id/tableRow9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp" >
+
+        <Spinner
+            android:id="@+id/spinnerActivities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_span="2" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_span="2"
+            android:text="@string/buttonOkay" />
+
+    </TableRow>
+    
+</TableLayout>

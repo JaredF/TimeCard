@@ -25,5 +25,11 @@
     <string name="titleTimeOut">Time Out</string>
     <string name="titleActivity">Activity</string>
     <string name="titleHours">Hours</string>
+    <string name="editAddIn">Time In</string>
+    <string name="editAddOut">Time Out</string>
+    <string name="editAddActivity">Activity</string>
+    <string name="buttonOkay">Okay</string>
+    <string name="textDate">Date</string>
+    <string name="textTime">Time</string>
 
 </resources>
