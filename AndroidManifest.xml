@@ -29,11 +29,6 @@
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.networksinmocean.timecard.ManualEntry"
-            android:label="@string/app_name"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
             android:name="com.networksinmocean.timecard.Add"
             android:label="@string/app_name"
             android:screenOrientation="landscape" >

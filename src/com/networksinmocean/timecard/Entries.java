@@ -57,8 +57,8 @@ public class Entries extends ListActivity{
 			
 			ListAdapter adapter = new SimpleAdapter(
 					Entries.this, punchList, R.layout.list_entry,
-					new String[] {"punchId", "timeIn", "timeOut", "project"},
-					new int[] {R.id.punchId, R.id.timeIn, R.id.timeOut, R.id.project});
+					new String[] {"punchId", "dateTimeIn", "dateTimeOut", "activity"},
+					new int[] {R.id.punchId, R.id.dateTimeIn, R.id.dateTimeOut, R.id.activity});
 		
 			setListAdapter(adapter);
 			

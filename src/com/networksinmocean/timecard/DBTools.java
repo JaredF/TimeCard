@@ -20,9 +20,9 @@ public class DBTools extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase database) {
 		
-		String query1 = "CREATE TABLE timepunches (punchId INTEGER PRIMARY KEY, timeIn FIXME, timeOut FIXME, project TEXT)";
-		String query2 = "CREATE TABLE statuses (statusId INTEGER PRIMARY KEY, punchId INTEGER, status TEXT, timestamp FIXME)";
-		String query3 = "CREATE TABLE changelog (changeId INTEGER PRIMARY KEY, punchId INTEGER, newTimeIn FIXME, newTimeOut FIXME, timestamp FIXME)";
+		String query1 = "CREATE TABLE timepunches (punchId INTEGER PRIMARY KEY, dateTimeIn TEXT, dateTimeOut TEXT, activity TEXT)";
+		String query2 = "CREATE TABLE statuses (statusId INTEGER PRIMARY KEY, punchId INTEGER, status TEXT, timestamp TEXT)";
+		String query3 = "CREATE TABLE changelog (changeId INTEGER PRIMARY KEY, punchId INTEGER, newTimeIn TEXT, newTimeOut TEXT, timestamp TEXT)";
 		
 		database.execSQL(query1);
 		database.execSQL(query2);
@@ -51,9 +51,9 @@ public class DBTools extends SQLiteOpenHelper {
 		
 		ContentValues values = new ContentValues();
 		
-		values.put("timeIn", queryValues.get("timeIn"));
-		values.put("timeOut", queryValues.get("timeOut"));
-		values.put("project", queryValues.get("project"));
+		values.put("dateTimeIn", queryValues.get("dateTimeIn"));
+		values.put("dateTimeOut", queryValues.get("dateTimeOut"));
+		values.put("activity", queryValues.get("activity"));
 		
 		database.insert("timepunches", null, values);
 		
@@ -68,8 +68,8 @@ public class DBTools extends SQLiteOpenHelper {
 		ContentValues values = new ContentValues();
 		
 		values.put("punchId", queryValues.get("punchId"));
-		values.put("newTimeIn", queryValues.get("newTimeIn"));
-		values.put("newTimeOut", queryValues.get("newTimeOut"));
+		values.put("newDateTimeIn", queryValues.get("newDateTimeIn"));
+		values.put("newDateTimeOut", queryValues.get("newDateTimeOut"));
 		values.put("timestamp", queryValues.get("timestamp"));
 		
 		database.insert("statuses", null, values);
@@ -111,9 +111,9 @@ public class DBTools extends SQLiteOpenHelper {
 				HashMap<String, String> punchMap = new HashMap<String, String>();
 				
 				punchMap.put("punchId", cursor.getString(0));
-				punchMap.put("timeIn", cursor.getString(1));
-				punchMap.put("timeOut", cursor.getString(2));
-				punchMap.put("project", cursor.getString(3));
+				punchMap.put("dateTimeIn", cursor.getString(1));
+				punchMap.put("dateTimeOut", cursor.getString(2));
+				punchMap.put("activity", cursor.getString(3));
 				
 				punchArrayList.add(punchMap);
 				

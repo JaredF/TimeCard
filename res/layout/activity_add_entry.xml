@@ -13,11 +13,12 @@
         android:paddingBottom="20dp" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textEntryInformation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="top|left"
             android:layout_span="2"
+            android:gravity="top|left"
+            android:text="@string/textNewEntry"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </TableRow>
@@ -57,19 +58,27 @@
         android:paddingTop="5dp" >
 
         <EditText
-            android:id="@+id/editTextDateIn"
+            android:id="@+id/dateIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
+            android:gravity="center"
+	        android:focusable="false" 
+	        android:focusableInTouchMode="false"
+            android:onClick="showDatePickerDialog"
             android:inputType="date" />
 
         <EditText
-            android:id="@+id/editTextTimeIn"
+            android:id="@+id/timeIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
+            android:gravity="center"
+            android:focusable="false" 
+	        android:focusableInTouchMode="false"
+            android:onClick="showTimePickerDialog"
             android:inputType="time" />
 
     </TableRow>
@@ -133,19 +142,27 @@
         android:paddingTop="5dp" >
 
         <EditText
-            android:id="@+id/editTextDateOut"
+            android:id="@+id/dateOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
+            android:gravity="center"
+            android:focusable="false" 
+	        android:focusableInTouchMode="false"
+            android:onClick="showDatePickerDialog"
             android:inputType="date" />
 
         <EditText
-            android:id="@+id/editTextTimeOut"
+            android:id="@+id/timeOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
+            android:gravity="center"
+            android:focusable="false" 
+	        android:focusableInTouchMode="false"
+            android:onClick="showTimePickerDialog"
             android:inputType="time" />
         
     </TableRow>
@@ -209,11 +226,12 @@
         android:paddingTop="5dp" >
 
         <Spinner
-            android:id="@+id/spinnerActivities"
+            android:id="@+id/activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_span="2" />
+            android:layout_span="2"
+            android:entries="@array/options" />
 
     </TableRow>
 
@@ -229,6 +247,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_span="2"
+            android:onClick="saveEntry"
             android:text="@string/buttonOkay" />
 
     </TableRow>

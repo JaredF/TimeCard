@@ -31,5 +31,12 @@
     <string name="buttonOkay">Okay</string>
     <string name="textDate">Date</string>
     <string name="textTime">Time</string>
+    <string name="textNewEntry">New Entry</string>
+    
+    <string-array name="options">
+        <item>ADNS</item>
+        <item>Test2</item>
+        <item>Test3</item>
+    </string-array>
 
 </resources>
