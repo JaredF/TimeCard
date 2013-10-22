@@ -22,8 +22,8 @@ public class Add extends Activity {
         
     static EditText dateIn;
     static EditText timeIn;
-    EditText dateOut;
-    EditText timeOut;
+    static EditText dateOut;
+    static EditText timeOut;
     Spinner activity;
     
     DBTools dbTools = new DBTools(this);
@@ -45,7 +45,10 @@ public class Add extends Activity {
     	
     }
     
-    public static class DatePickerFragment extends DialogFragment
+    /* I really hate this entire section, but I don't know Java well enough to 
+       figure out how to use each of these once and pass the EditText id in the
+       onClick call... FIXME */
+    public static class DatePickerFragmentIn extends DialogFragment
 							implements DatePickerDialog.OnDateSetListener {
 
 		@Override
@@ -70,10 +73,9 @@ public class Add extends Activity {
 		
 	}
     
-    public static class TimePickerFragment extends DialogFragment
+    public static class TimePickerFragmentIn extends DialogFragment
 							implements TimePickerDialog.OnTimeSetListener {
 
-		@Override
 		public Dialog onCreateDialog(Bundle savedInstanceState) {
 			
 			// Use the current time as the default values for the picker
@@ -94,6 +96,56 @@ public class Add extends Activity {
 	
 	}
     
+    public static class DatePickerFragmentOut extends DialogFragment
+	implements DatePickerDialog.OnDateSetListener {
+
+		@Override
+		public Dialog onCreateDialog(Bundle savedInstanceState) {
+		
+		// Use the current date as the default values for the picker
+		final Calendar c = Calendar.getInstance();
+		int year = c.get(Calendar.YEAR);
+		int month = c.get(Calendar.MONTH);
+		int day = c.get(Calendar.DAY_OF_MONTH);
+		
+		// Create a new instance of DatePickerDialog and return it
+		return new DatePickerDialog(getActivity(), this, year, month, day);
+		
+		}
+		
+		public void onDateSet(DatePicker view, int year, int month, int day) {
+		
+		dateOut.setText(String.valueOf(year) + "-" +   String.valueOf(month + 1 ) + "-" + String.valueOf(day));
+		
+		}
+		
+		}
+		
+		public static class TimePickerFragmentOut extends DialogFragment
+			implements TimePickerDialog.OnTimeSetListener {
+		
+		public Dialog onCreateDialog(Bundle savedInstanceState) {
+		
+		// Use the current time as the default values for the picker
+		final Calendar c = Calendar.getInstance();
+		int hour = c.get(Calendar.HOUR_OF_DAY);
+		
+		// Create a new instance of TimePickerDialog and return it
+		return new TimePickerDialog(getActivity(), this, hour, 0,
+		DateFormat.is24HourFormat(getActivity()));
+		
+		}
+		
+		public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+		
+		timeOut.setText(String.valueOf(hourOfDay) + ":" + pad(minute));
+		
+		}
+		
+	}
+    
+
+    
     private static String pad(int c) {
 		if (c >= 10)
 		   return String.valueOf(c);
@@ -101,13 +153,23 @@ public class Add extends Activity {
 		   return "0" + String.valueOf(c);
 	}
 
-    public void showDatePickerDialog(View v) {
-        DialogFragment newFragment = new DatePickerFragment();
+    public void showDatePickerDialogIn(View v, String test) {
+        DialogFragment newFragment = new DatePickerFragmentIn();
         newFragment.show(getFragmentManager(), "datePicker");
     }
     
-    public void showTimePickerDialog(View v) {
-        DialogFragment newFragment = new TimePickerFragment();
+    public void showTimePickerDialogIn(View v) {
+        DialogFragment newFragment = new TimePickerFragmentIn();
+        newFragment.show(getFragmentManager(), "timePicker");
+    }
+    
+    public void showDatePickerDialogOut(View v, String test) {
+        DialogFragment newFragment = new DatePickerFragmentOut();
+        newFragment.show(getFragmentManager(), "datePicker");
+    }
+    
+    public void showTimePickerDialogOut(View v) {
+        DialogFragment newFragment = new TimePickerFragmentOut();
         newFragment.show(getFragmentManager(), "timePicker");
     }
     

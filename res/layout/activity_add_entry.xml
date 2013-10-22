@@ -66,7 +66,7 @@
             android:gravity="center"
 	        android:focusable="false" 
 	        android:focusableInTouchMode="false"
-            android:onClick="showDatePickerDialog"
+            android:onClick="showDatePickerDialogIn"
             android:inputType="date" />
 
         <EditText
@@ -78,7 +78,7 @@
             android:gravity="center"
             android:focusable="false" 
 	        android:focusableInTouchMode="false"
-            android:onClick="showTimePickerDialog"
+            android:onClick="showTimePickerDialogIn"
             android:inputType="time" />
 
     </TableRow>
@@ -150,7 +150,7 @@
             android:gravity="center"
             android:focusable="false" 
 	        android:focusableInTouchMode="false"
-            android:onClick="showDatePickerDialog"
+            android:onClick="showDatePickerDialogOut"
             android:inputType="date" />
 
         <EditText
@@ -162,7 +162,7 @@
             android:gravity="center"
             android:focusable="false" 
 	        android:focusableInTouchMode="false"
-            android:onClick="showTimePickerDialog"
+            android:onClick="showTimePickerDialogOut"
             android:inputType="time" />
         
     </TableRow>
