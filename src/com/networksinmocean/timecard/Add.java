@@ -153,7 +153,7 @@ public class Add extends Activity {
 		   return "0" + String.valueOf(c);
 	}
 
-    public void showDatePickerDialogIn(View v, String test) {
+    public void showDatePickerDialogIn(View v) {
         DialogFragment newFragment = new DatePickerFragmentIn();
         newFragment.show(getFragmentManager(), "datePicker");
     }
@@ -163,7 +163,7 @@ public class Add extends Activity {
         newFragment.show(getFragmentManager(), "timePicker");
     }
     
-    public void showDatePickerDialogOut(View v, String test) {
+    public void showDatePickerDialogOut(View v) {
         DialogFragment newFragment = new DatePickerFragmentOut();
         newFragment.show(getFragmentManager(), "datePicker");
     }
