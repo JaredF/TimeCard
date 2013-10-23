@@ -192,6 +192,7 @@ public class Add extends Activity {
 		public static class TimePickerFragmentOut extends DialogFragment
 			implements TimePickerDialog.OnTimeSetListener {
 		
+		@SuppressLint("SimpleDateFormat")
 		public Dialog onCreateDialog(Bundle savedInstanceState) {
 		
 			int hour, minute;
@@ -232,8 +233,6 @@ public class Add extends Activity {
 		}
 		
 	}
-    
-
     
     private static String pad(int c) {
 		if (c >= 10)
