@@ -23,10 +23,17 @@ public class DBTools extends SQLiteOpenHelper {
 		String query1 = "CREATE TABLE timepunches (punchId INTEGER PRIMARY KEY, dateTimeIn TEXT, dateTimeOut TEXT, activity TEXT)";
 		String query2 = "CREATE TABLE statuses (statusId INTEGER PRIMARY KEY, punchId INTEGER, status TEXT, timestamp TEXT)";
 		String query3 = "CREATE TABLE changelog (changeId INTEGER PRIMARY KEY, punchId INTEGER, newTimeIn TEXT, newTimeOut TEXT, timestamp TEXT)";
+		String query4 = "CREATE TABLE activities (activityId INTEGER PRIMARY KEY, activityName TEXT, chargeCode INTEGER, uniqueCode INTEGER NOT NULL UNIQUE)";
+		
+		String query5 = "INSERT INTO activities (activityName, chargeCode) VALUES (ADNS, 0, 0)";
+		String query6 = "INSERT INTO activities (activityName, chargeCode) VALUES (Aegis Ashore, 0, 1)";
 		
 		database.execSQL(query1);
 		database.execSQL(query2);
 		database.execSQL(query3);
+		database.execSQL(query4);
+		database.execSQL(query5);
+		database.execSQL(query6);
 		
 	}
 
@@ -36,10 +43,12 @@ public class DBTools extends SQLiteOpenHelper {
 		String query1 = "DROP TABLE IF EXISTS timepunches";
 		String query2 = "DROP TABLE IF EXISTS statuses";
 		String query3 = "DROP TABLE IF EXISTS changelog";
+		String query4 = "DROP TABLE IF EXISTS activities";
 		
 		database.execSQL(query1);
 		database.execSQL(query2);
 		database.execSQL(query3);
+		database.execSQL(query4);
 		
 		onCreate(database);
 		
