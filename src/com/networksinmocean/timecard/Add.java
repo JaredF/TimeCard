@@ -1,7 +1,10 @@
 package com.networksinmocean.timecard;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -12,7 +15,6 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -51,14 +53,36 @@ public class Add extends Activity {
     public static class DatePickerFragmentIn extends DialogFragment
 							implements DatePickerDialog.OnDateSetListener {
 
+		@SuppressLint("SimpleDateFormat")
 		@Override
 		public Dialog onCreateDialog(Bundle savedInstanceState) {
 			
+			int year , month, day;
 			// Use the current date as the default values for the picker
-			final Calendar c = Calendar.getInstance();
-			int year = c.get(Calendar.YEAR);
-	        int month = c.get(Calendar.MONTH);
-	        int day = c.get(Calendar.DAY_OF_MONTH);
+			String dateInText = dateIn.getText().toString();
+			if (dateInText.matches("")) {
+				
+				final Calendar c = Calendar.getInstance();
+				year = c.get(Calendar.YEAR);
+		        month = c.get(Calendar.MONTH);
+		        day = c.get(Calendar.DAY_OF_MONTH);
+		        
+			} else {
+				
+				final Calendar c = Calendar.getInstance();
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+				try {
+					c.setTime(sdf.parse(dateInText));
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				year = c.get(Calendar.YEAR);
+		        month = c.get(Calendar.MONTH);
+		        day = c.get(Calendar.DAY_OF_MONTH);
+
+			}
 			
 			// Create a new instance of DatePickerDialog and return it
 			return new DatePickerDialog(getActivity(), this, year, month, day);
@@ -76,14 +100,36 @@ public class Add extends Activity {
     public static class TimePickerFragmentIn extends DialogFragment
 							implements TimePickerDialog.OnTimeSetListener {
 
+		@SuppressLint("SimpleDateFormat")
 		public Dialog onCreateDialog(Bundle savedInstanceState) {
 			
-			// Use the current time as the default values for the picker
-			final Calendar c = Calendar.getInstance();
-			int hour = c.get(Calendar.HOUR_OF_DAY);
+			int hour, minute;
+			// Use the current date as the default values for the picker
+			String timeInText = timeIn.getText().toString();
+			if (timeInText.matches("")) {
+				
+				final Calendar c = Calendar.getInstance();
+				hour = c.get(Calendar.HOUR_OF_DAY);
+				minute = 0;
+		        
+			} else {
+				
+				final Calendar c = Calendar.getInstance();
+				SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+				try {
+					c.setTime(sdf.parse(timeInText));
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				hour = c.get(Calendar.HOUR_OF_DAY);
+		        minute = c.get(Calendar.MINUTE);
+
+			}
 		
 			// Create a new instance of TimePickerDialog and return it
-			return new TimePickerDialog(getActivity(), this, hour, 0,
+			return new TimePickerDialog(getActivity(), this, hour, minute,
 			DateFormat.is24HourFormat(getActivity()));
 			
 		}
@@ -96,17 +142,39 @@ public class Add extends Activity {
 	
 	}
     
-    public static class DatePickerFragmentOut extends DialogFragment
+    @SuppressLint("SimpleDateFormat")
+	public static class DatePickerFragmentOut extends DialogFragment
 	implements DatePickerDialog.OnDateSetListener {
 
 		@Override
 		public Dialog onCreateDialog(Bundle savedInstanceState) {
 		
-		// Use the current date as the default values for the picker
-		final Calendar c = Calendar.getInstance();
-		int year = c.get(Calendar.YEAR);
-		int month = c.get(Calendar.MONTH);
-		int day = c.get(Calendar.DAY_OF_MONTH);
+			int year , month, day;
+			// Use the current date as the default values for the picker
+			String dateOutText = dateOut.getText().toString();
+			if (dateOutText.matches("")) {
+				
+				final Calendar c = Calendar.getInstance();
+				year = c.get(Calendar.YEAR);
+		        month = c.get(Calendar.MONTH);
+		        day = c.get(Calendar.DAY_OF_MONTH);
+		        
+			} else {
+				
+				final Calendar c = Calendar.getInstance();
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+				try {
+					c.setTime(sdf.parse(dateOutText));
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				year = c.get(Calendar.YEAR);
+		        month = c.get(Calendar.MONTH);
+		        day = c.get(Calendar.DAY_OF_MONTH);
+		        
+			}
 		
 		// Create a new instance of DatePickerDialog and return it
 		return new DatePickerDialog(getActivity(), this, year, month, day);
@@ -126,12 +194,33 @@ public class Add extends Activity {
 		
 		public Dialog onCreateDialog(Bundle savedInstanceState) {
 		
-		// Use the current time as the default values for the picker
-		final Calendar c = Calendar.getInstance();
-		int hour = c.get(Calendar.HOUR_OF_DAY);
+			int hour, minute;
+			// Use the current date as the default values for the picker
+			String timeOutText = timeOut.getText().toString();
+			if (timeOutText.matches("")) {
+				
+				final Calendar c = Calendar.getInstance();
+				hour = c.get(Calendar.HOUR_OF_DAY);
+				minute = 0;
+		        
+			} else {
+				
+				final Calendar c = Calendar.getInstance();
+				SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+				try {
+					c.setTime(sdf.parse(timeOutText));
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				hour = c.get(Calendar.HOUR_OF_DAY);
+		        minute = c.get(Calendar.MINUTE);
+
+			}
 		
 		// Create a new instance of TimePickerDialog and return it
-		return new TimePickerDialog(getActivity(), this, hour, 0,
+		return new TimePickerDialog(getActivity(), this, hour, minute,
 		DateFormat.is24HourFormat(getActivity()));
 		
 		}
