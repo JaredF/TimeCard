@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <PreferenceCategory
+            android:title="@string/prefCategoryVisual">
+            
+	    <SwitchPreference
+	        android:key="prefColonFlash"
+	        android:title="@string/prefColonFlash"
+	        android:summary="@string/prefColonFlashSummary"
+	        android:defaultValue="true" />
+	    
+	    <SwitchPreference
+	        android:key="prefClockSeconds"
+	        android:title="@string/prefClockSeconds"
+	        android:summary="@string/prefClockSecondsSummary"
+	        android:defaultValue="true" />
+    </PreferenceCategory>
+    
+</PreferenceScreen>

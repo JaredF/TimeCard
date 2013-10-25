@@ -32,7 +32,11 @@
     <string name="textDate">Date</string>
     <string name="textTime">Time</string>
     <string name="textNewEntry">New Entry</string>
-    
+    <string name="prefColonFlash">Colon Flashes</string>
+    <string name="prefColonFlashSummary">If enabled, the colon will flash on the "Punch Clock" screen.</string>
+    <string name="prefClockSeconds">Clock Shows Seconds</string>
+    <string name="prefClockSecondsSummary">If enabled, the "Punch Clock" will display seconds.</string>
+    <string name="prefCategoryVisual">Visual</string>
     <string-array name="options">
         <item>ADNS</item>
         <item>Test2</item>
