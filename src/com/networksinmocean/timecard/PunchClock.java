@@ -1,11 +1,8 @@
 package com.networksinmocean.timecard;
 
-import com.networksinmocean.timecard.Add.TimePickerFragmentOut;
-
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.app.Activity;
-import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.Menu;
