@@ -96,17 +96,6 @@ public class PunchClock extends Activity {
     	startActivity(showActivityAdd);
     	
     }
-    
-    public static class SettingsFragment extends PreferenceFragment {
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-
-            // Load the preferences from an XML resource
-            addPreferencesFromResource(R.xml.preferences);
-        }
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -126,10 +115,9 @@ public class PunchClock extends Activity {
                 showActivityAdd();
                 return true;
             case R.id.action_settings:
-            	getFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new SettingsFragment())
-                .addToBackStack(null)
-                .commit();
+            	Intent intent = new Intent();
+                intent.setClass(PunchClock.this, Preferences.class);
+                startActivityForResult(intent, 0); 
             	return true;
             default:
                 return super.onOptionsItemSelected(item);
