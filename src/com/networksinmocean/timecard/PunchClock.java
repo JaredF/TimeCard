@@ -1,7 +1,6 @@
 package com.networksinmocean.timecard;
 
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
